@@ -52,19 +52,21 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 288px;
-
   text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .title {
   font-weight: 700;
   font-size: 22px;
   line-height: 1.2;
+  width: 256px;
   color: hsl(218, 44%, 22%);
 }
 
 .subtitle {
+  width: 256px;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.4;
