@@ -1,3 +1,22 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-slate-300: hsl(212, 45%, 89%);
+  --color-slate-500: hsl(216, 15%, 48%);
+  --color-slate-900: hsl(218, 44%, 22%);
+
+  /* * 1. 把“纯黑”的 RGB 值（不带函数）存为变量。
+   * 我们叫它 --color-shadow，因为它就是用来做阴影的基色。
+   */
+  --color-shadow: 0, 0, 0;
+
+  /* * 2. 把“透明度”也存为变量。
+   * 我们可以定义好几个“档位”
+   */
+  --shadow-opacity-soft: 0.047; /* 你用的这个，非常柔和 */
+  --shadow-opacity-medium: 0.1; /* 一个中等的阴影 */
+  --shadow-opacity-strong: 0.2; /* 一个更强的阴影 */
+}
+
 html,
 body {
   height: 100%;
@@ -5,7 +24,7 @@ body {
 }
 
 body {
-  background-color: hsl(212, 45%, 89%);
+  background-color: var(--color-slate-300);
 
   display: flex;
   justify-content: center;
@@ -31,11 +50,13 @@ body {
 
   gap: 24px;
 
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--color-white);
   border-radius: 20px;
 
-  -webkit-box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.047);
-  box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.047);
+  -webkit-box-shadow: 0px 25px 25px 0px
+    rgba(var(--color-shadow), var(--shadow-opacity-soft));
+  box-shadow: 0px 25px 25px 0px
+    rgba(var(--color-shadow), var(--shadow-opacity-soft));
 }
 
 .container > * {
@@ -68,7 +89,7 @@ body {
   font-size: 22px;
   line-height: 1.2;
   /* width: 256px; */
-  color: hsl(218, 44%, 22%);
+  color: var(--color-slate-900);
 }
 
 .subtitle {
@@ -77,5 +98,5 @@ body {
   font-size: 15px;
   line-height: 1.4;
   letter-spacing: 0.2px;
-  color: hsl(216, 15%, 48%);
+  color: var(--color-slate-500);
 }
