@@ -14,10 +14,15 @@ body {
 }
 
 .container {
-  margin: auto;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* 控制整体的最大宽度。这样子元素width设置成 100% 就可以而不需要设置固定宽度 */
+  /* 内在驱动布局 (Intrinsic Layout) 的思想 */
+  width: 100%;
+  max-width: 320px;
 
   padding-top: 16px;
   padding-left: 16px;
@@ -33,18 +38,19 @@ body {
   box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.047);
 }
 
-.container > div {
+.container > * {
   flex: 1 0 0;
 }
 
-.image {
+/* .image {
   width: 288px;
   height: 288px;
-}
+} */
 
 .qr-image {
-  width: 288px;
-  height: 288px;
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: 10px;
 }
 
@@ -61,12 +67,12 @@ body {
   font-weight: 700;
   font-size: 22px;
   line-height: 1.2;
-  width: 256px;
+  /* width: 256px; */
   color: hsl(218, 44%, 22%);
 }
 
 .subtitle {
-  width: 256px;
+  /* width: 256px; */
   font-weight: 400;
   font-size: 15px;
   line-height: 1.4;
